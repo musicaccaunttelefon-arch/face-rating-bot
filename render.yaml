@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: face-rating-bot
+    runtime: python
+    buildCommand: apt-get install -y libgl1-mesa-glx libglib2.0-0 && pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: RENDER_URL
+        sync: false
